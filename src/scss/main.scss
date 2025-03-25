@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+// Кольори
+$black: #2C2C2C;
+$gray: #999999;
+$dark-gray: #4E4E4E;
+$pink: #F8F3EC;
+$dark-pink: #DBCCBA;
+// Розміри
+$width: 1440px;
+$header-height: 7400px;
+$footer-height: 786px;
+$content-height: 994px;
+// Розміри шрифтів
+$p-font-size: 18px;
+$p-font-size-large: 20px;
+$p-font-size-small: 16px;
+$h1-font-size: 72px;
+$h2-font-size: 48px;
+$h3-font-size: 24px;
+// Відступи
+$margin: 50px;
+$margin-left: 40px;
+
+html {
+  font-size: $p-font-size;
+  color: $black;
+  background-color: $pink;
+}
+body {
+  max-width: 1440px;
+  margin: auto;
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+a {
+  color: $dark-gray;
+}
+header ,
+main,
+footer {
+  border: 1px dashed $gray;
+}
+h1 {
+  font-size: $h1-font-size;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+}
+h2 {
+  font-size: $h2-font-size;
+}
+h3 {
+  font-size: $h3-font-size;
+}
+header {
+  height: $header-height;
+  background-color: $dark-pink;
+}
+footer {
+  height: $footer-height;
+  background-color: $black;
+  color: $gray;
+}
+main {
+  height: $content-height;
+}
