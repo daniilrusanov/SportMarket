@@ -1,0 +1,19 @@
+header.header
+    .container
+        .header__wrapper
+            .header__logo
+                a(href="/")
+                    img.logo(src="src/images/logo.svg", alt="Logo")
+                    span.logo-text SportMarket Admin
+
+            .header__search
+                form.search-form(action="/search", method="GET")
+                    input.search-input(type="text", placeholder="Пошук...")
+                    button.search-btn(type="submit", aria-label="Submit")
+                        i.icon-search
+
+            .header__menu-toggle
+                button.menu-toggle(type="button")
+                    img.icon-menu(src="src/images/burger.svg", alt="Menu")
+
+

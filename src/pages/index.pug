@@ -2,8 +2,12 @@ doctype html
 html(lang='ua')
     head
         meata(charset='utf-8')
-        title= 'Vite+pug'
+        title= 'SportMarket'
+
     body
-        include header.pug
-        include content.pug
-        include footer.pug
+        include sections/menu.pug
+        include sections/current-tasks
+        include sections/recent-changes
+        include sections/supplier-status
+        include sections/system-stability
+        include sections/footer

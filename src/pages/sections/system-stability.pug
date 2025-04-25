@@ -1,0 +1,34 @@
+section.system-stability
+    h2.section-title Графік стабільності всіх систем
+
+    .stability-chart-container
+        .stability-metrics
+            .metric-card
+                .metric-label Оброблені запити
+                .metric-value 1,234
+            .metric-card
+                .metric-label Активні користувачі
+                .metric-value 45
+            .metric-card
+                .metric-label Виконані запити
+                .metric-value 892
+
+        .chart-wrapper
+            .chart-container
+                canvas#stabilityChart
+
+    .chart-controls
+        .filter-group
+            span.filter-label Період:
+            select.filter-select
+                option(value="day") День
+                option(value="week" selected) Тиждень
+                option(value="month") Місяць
+
+        .filter-group
+            span.filter-label Системи:
+            select.filter-select
+                option(value="all" selected) Всі системи
+                option(value="catalog") Каталог
+                option(value="orders") Замовлення
+                option(value="users") Користувачі
