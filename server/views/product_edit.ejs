@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="../public/style/main.css" href="/styles.css">
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            crossorigin="anonymous"
+    />
+    <title>Sporting Goods</title>
+</head>
+<body>
+<h1 class="text-center">Редагувати товар</h1>
+<form action="" method="POST" class="text-center">
+    <div class="mb-3">
+
+        <label>
+            Назва товару
+            <input type="text" class="form-control" placeholder="Назва" id="Name" name="Name"
+                   value="<%= Product[0].Name %>">
+        </label>
+        <label>
+            Категорія
+            <select class="form-select" aria-label="Категорія" id="Category" name="Category">
+                <option selected value="Sneakers" name="Sneakers">Sneakers</option>
+                <option value="T-shirt" name="T-shirt">T-shirt</option>
+                <option value="Pants" name="Pants">Pants</option>
+            </select>
+        </label>
+        <label>
+            Вартість
+            <input type="number" class="form-control" placeholder="Вартість" id="Price" name="Price"
+                   value="<%= Product[0].Price %>">
+        </label>
+        <label>
+            Кількість
+            <input type="number" class="form-control" placeholder="Кількість" id="Amount" name="Amount"
+                   value="<%= Product[0].Amount %>">
+        </label>
+        <label>
+            Код постачальника
+            <input type="number" class="form-control" placeholder="Код постачальника" id="idSupplier" name="idSupplier"
+                   value="<%= Product[0].idSupplier %>">
+        </label>
+        <label>
+            Код складу
+            <input type="number" class="form-control" placeholder="Код складу" id="idWarehouse" name="idWarehouse"
+                   value="<%= Product[0].idWarehouse %>">
+        </label>
+
+    </div>
+    <button type="submit" class="btn btn-primary" formaction="/api/Products/put/<%= Product[0].idProduct %>">Редагувати</button>
+</form>
+<a class="btn btn-info" href="/api/Products">Повернутися</a>
+</body>
+</html>
