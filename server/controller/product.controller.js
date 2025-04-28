@@ -6,8 +6,8 @@ const findAll = function (req, res) {
             res.send(err);
         }
         console.log('res', product);
-        // res.send(product);
-        res.render('products', { Product: product });
+        res.send(product);
+        //res.render('product.ejs', { Product: product });
     });
 };
 
@@ -20,8 +20,8 @@ const create = function (req, res) {
             if (err) {
                 res.send(err);
             }
-            // res.json({ error: false, message: "Product added successfully!", data: product });
-            res.redirect('/');
+            res.json({ error: false, message: "Product added successfully!", data: product });
+            //res.redirect('/api/Products/');
         });
     }
 }
@@ -31,8 +31,8 @@ const findById = function (req, res) {
         if (err) {
             res.send(err);
         }
-        // res.json(product);
-        res.render('product_edit', { Product: product });
+        res.json(product);
+        //res.render('product_edit.ejs', { Product: product });
     });
 }
 
@@ -44,8 +44,8 @@ const update = function (req, res) {
             if (err) {
                 res.send(err);
             }
-            // res.json({ error: false, message: "Product successfully updated!", data: product });
-            res.redirect('/');
+            res.json({ error: false, message: "Product successfully updated!", data: product });
+            //res.redirect('/api/Products');
         });
     }
 }
@@ -55,8 +55,8 @@ const deleteProduct = function (req, res) {
         if (err) {
             res.send(err);
         }
-        // res.json({ error: false, message: 'Product successfully deleted!' });
-        res.redirect('/');
+        res.json({ error: false, message: 'Product successfully deleted!' });
+        //res.redirect('/api/Products');
     });
 }
 

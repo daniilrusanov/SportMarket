@@ -1,9 +1,20 @@
 import { defineConfig } from 'vite';
-import pugPlugin from "vite-plugin-pug";
+import pugPlugin from 'vite-plugin-pug';
 
-const options = { pretty: true };
-const locals = { name: "My Pug" };
+const locals = {};
 
 export default defineConfig({
-    plugins: [pugPlugin(undefined, { pagesUrl: "./pages/" })],
+    build: {
+        outDir: '../dist',
+        emptyOutDir: true,
+    },
+    plugins: [
+        pugPlugin({ pretty: true }, locals)
+    ],
+    server: {
+        port: 3000,
+        proxy: {
+            '/api': 'http://localhost:5000',
+        },
+    },
 });

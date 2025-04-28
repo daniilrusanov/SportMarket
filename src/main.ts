@@ -1,10 +1,20 @@
 // import './style.css'
-import './assets/scss/main.scss'
-import './assets/scss/sections/menu.scss'
-import './assets/scss/sections/current-tasks.scss'
-import './assets/scss/sections/recent-changes.scss'
-import './assets/scss/sections/supplier-status.scss'
-import './assets/scss/sections/system-stability.scss'
-import './assets/scss/sections/footer.scss'
+// @ts-ignore
+import './assets/scss/main.scss';
+// @ts-ignore
+import './assets/scss/sections/menu.scss';
+// @ts-ignore
+import './assets/scss/sections/current-tasks.scss';
+// @ts-ignore
+import './assets/scss/sections/recent-changes.scss';
+// @ts-ignore
+import './assets/scss/sections/supplier-status.scss';
+// @ts-ignore
+import './assets/scss/sections/system-stability.scss';
+// @ts-ignore
+import './assets/scss/sections/products-catalog.scss';
+// @ts-ignore
+import './assets/scss/sections/footer.scss';
 
 import './assets/js/system-stability.js';
+import './assets/js/products-catalog.js';
