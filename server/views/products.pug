@@ -1,0 +1,66 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/styles.css")
+        link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css", crossorigin="anonymous")
+        title Sporting Goods
+    body(class="body")
+        a.btn.btn-outline-secondary(href="/" style="margin-left: 50px") На головну
+        h1.text-center Список товарів
+
+        .table-responsive
+            table.table.table-primary.table-hover.table-sm
+                thead
+                    tr
+                        th Код товару
+                        th Назва
+                        th Категорія
+                        th Вартість
+                        th Кількість
+                        th Код постачальника
+                        th Код складу
+                        th Дії
+                tbody
+                    each product in products
+                        tr
+                            td= product.idProduct
+                            td= product.Name
+                            td= product.Category
+                            td= product.Price
+                            td= product.Amount
+                            td= product.idSupplier
+                            td= product.idWarehouse
+                            td(style="background-color: white")
+                                a.btn.btn-danger(href=`/api/Products/delete/${product.idProduct}`) Видалити
+                                a.btn.btn-info(href=`/api/Products/${product.idProduct}`) Редагувати
+
+        h2.text-center Додати товар
+        form(action="/api/Products" method="POST" class="text-center")
+            .mb-3
+                label
+                    | Назва товару
+                    input.form-control(type="text" placeholder="Назва" id="Name" name="Name")
+                label
+                    | Категорія
+                    select.form-select(aria-label="Категорія" id="Category" name="Category")
+                        option(selected value="Sneakers" name="Sneakers") Sneakers
+                        option(value="T-shirt" name="T-shirt") T-shirt
+                        option(value="Pants" name="Pants") Pants
+                label
+                    | Вартість
+                    input.form-control(type="number" placeholder="Вартість" id="Price" name="Price")
+                label
+                    | Кількість
+                    input.form-control(type="number" placeholder="Кількість" id="Amount" name="Amount")
+                label
+                    | Код постачальника
+                    input.form-control(type="number" placeholder="Код постачальника" id="idSupplier" name="idSupplier")
+                label
+                    | Код складу
+                    input.form-control(type="number" placeholder="Код складу" id="idWarehouse" name="idWarehouse")
+                button.btn.btn-primary(type="submit") Додати
+
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js", crossorigin="anonymous")
