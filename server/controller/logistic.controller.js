@@ -1,6 +1,6 @@
-const Logistic = require('../model/logistic.model');
+import Logistic from '../model/logistic.model';
 
-exports.findAll = function (req, res) {
+const findAll = function (req, res) {
     Logistic.findAll(function (err, logistic) {
         if (err) {
             res.send(err);
@@ -11,7 +11,7 @@ exports.findAll = function (req, res) {
     });
 };
 
-exports.create = function (req, res) {
+const create = function (req, res) {
     const new_logistic = new Logistic(req.body);
     if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
         res.status(400).send({ error: true, message: 'Please provide all required field' });
@@ -26,7 +26,7 @@ exports.create = function (req, res) {
     }
 }
 
-exports.findById = function (req, res) {
+const findById = function (req, res) {
     Logistic.findById(req.params.id, function (err, logistic) {
         if (err) {
             res.send(err);
@@ -36,7 +36,7 @@ exports.findById = function (req, res) {
     });
 }
 
-exports.update = function (req, res) {
+const update = function (req, res) {
     if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
         res.status(400).send({ error: true, message: 'Please provide all required field' });
     } else {
@@ -50,7 +50,7 @@ exports.update = function (req, res) {
     }
 }
 
-exports.delete = function (req, res) {
+const deleteLogistic = function (req, res) {
     Logistic.delete(req.params.id, function (err, logistic) {
         if (err) {
             res.send(err);
@@ -59,3 +59,5 @@ exports.delete = function (req, res) {
         //res.redirect('/api/logistics');
     });
 }
+
+export default { findAll, create, findById, update, deleteLogistic };

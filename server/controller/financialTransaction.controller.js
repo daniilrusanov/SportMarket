@@ -1,6 +1,6 @@
-const FinancialTransaction = require('../model/financialTransaction.model');
+import FinancialTransaction from '../model/financialTransaction.model';
 
-exports.findAll = function (req, res) {
+const findAll = function (req, res) {
     FinancialTransaction.findAll(function (err, financialTransaction) {
         if (err) {
             res.send(err);
@@ -11,7 +11,7 @@ exports.findAll = function (req, res) {
     });
 };
 
-exports.create = function (req, res) {
+const create = function (req, res) {
     const new_financialTransaction = new FinancialTransaction(req.body);
     if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
         res.status(400).send({ error: true, message: 'Please provide all required field' });
@@ -26,7 +26,7 @@ exports.create = function (req, res) {
     }
 }
 
-exports.findById = function (req, res) {
+const findById = function (req, res) {
     FinancialTransaction.findById(req.params.id, function (err, financialTransaction) {
         if (err) {
             res.send(err);
@@ -36,7 +36,7 @@ exports.findById = function (req, res) {
     });
 }
 
-exports.update = function (req, res) {
+const update = function (req, res) {
     if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
         res.status(400).send({ error: true, message: 'Please provide all required field' });
     } else {
@@ -50,7 +50,7 @@ exports.update = function (req, res) {
     }
 }
 
-exports.delete = function (req, res) {
+const deleteFinancialTransaction = function (req, res) {
     FinancialTransaction.delete(req.params.id, function (err, financialTransaction) {
         if (err) {
             res.send(err);
@@ -59,3 +59,5 @@ exports.delete = function (req, res) {
         //res.redirect('/api/FinancialTransactions');
     });
 }
+
+export default { findAll, create, findById, update, deleteFinancialTransaction };

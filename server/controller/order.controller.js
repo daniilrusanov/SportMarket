@@ -1,6 +1,6 @@
-const Order = require('../model/order.model');
+import Order from '../model/order.model';
 
-exports.findAll = function (req, res) {
+const findAll = function (req, res) {
     Order.findAll(function (err, order) {
         if (err) {
             res.send(err);
@@ -11,7 +11,7 @@ exports.findAll = function (req, res) {
     });
 };
 
-exports.create = function (req, res) {
+const create = function (req, res) {
     const new_order = new Order(req.body);
     if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
         res.status(400).send({ error: true, message: 'Please provide all required field' });
@@ -26,7 +26,7 @@ exports.create = function (req, res) {
     }
 }
 
-exports.findById = function (req, res) {
+const findById = function (req, res) {
     Order.findById(req.params.id, function (err, order) {
         if (err) {
             res.send(err);
@@ -36,7 +36,7 @@ exports.findById = function (req, res) {
     });
 }
 
-exports.update = function (req, res) {
+const update = function (req, res) {
     if (req.body.constructor === Object && Object.keys(req.body).length === 0) {
         res.status(400).send({ error: true, message: 'Please provide all required field' });
     } else {
@@ -50,7 +50,7 @@ exports.update = function (req, res) {
     }
 }
 
-exports.delete = function (req, res) {
+const deleteOrder = function (req, res) {
     Order.delete(req.params.id, function (err, order) {
         if (err) {
             res.send(err);
@@ -59,3 +59,5 @@ exports.delete = function (req, res) {
         //res.redirect('/api/Orders');
     });
 }
+
+export default { findAll, create, findById, update, deleteOrder };
