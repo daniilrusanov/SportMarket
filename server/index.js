@@ -1,8 +1,15 @@
 import cors from 'cors';
 import express from 'express';
 import bodyParser from 'body-parser';
-import productRoutes from './router/product.routes.js';
 import * as path from "node:path";
+
+import productRoutes from './router/product.routes.js';
+const financialTransactionRoutes = require('./router/financialTransaction.routes');
+const logisticsRoutes = require('./router/logistic.routes');
+const ordersRoutes = require('./router/order.routes');
+const suppliersRoutes = require('./router/supplier.routes');
+const warehouseRoutes = require('./router/warehouse.routes');
+
 
 const PORT = 5000;
 const app = express();
@@ -23,5 +30,11 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/Products', productRoutes);
+app.use('/api/FinancialTransactions', financialTransactionRoutes);
+app.use('/api/Logistics', logisticsRoutes);
+app.use('/api/Orders', ordersRoutes);
+app.use('/api/Suppliers', suppliersRoutes);
+app.use('/api/Warehouses', warehouseRoutes);
+
 
 app.listen(PORT, () => console.log(`Listening on port ${PORT}`));
