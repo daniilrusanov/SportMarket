@@ -88,7 +88,7 @@ function renderProducts(products) {
 }
 
 // Функція для додавання нового товару
-async function addProduct() {
+window.addProduct = async function() {
     const formData = {
         Name: document.getElementById('add-Name').value.trim(),
         Category: document.getElementById('add-Category').value,
@@ -129,7 +129,7 @@ async function addProduct() {
 }
 
 // Функція для видалення товару
-async function deleteProduct(id) {
+window.deleteProduct = async function (id) {
     if (confirm('Ви впевнені, що хочете видалити цей товар?')) {
         try {
             const response = await fetch(`http://localhost:5000/api/Products/${id}`, {
@@ -150,7 +150,7 @@ async function deleteProduct(id) {
 }
 
 // Функція для отримання даних товару за ID і відкриття форми редагування
-async function editProductForm(id) {
+window.editProductForm = async function (id) {
     try {
         // Запит даних товару за ID
         const response = await fetch(`http://localhost:5000/api/Products/${id}`);
@@ -189,7 +189,7 @@ async function editProductForm(id) {
 }
 
 // Функція для оновлення товару
-async function updateProduct() {
+window.updateProduct = async function () {
     const id = document.getElementById('edit-id').value;
     const formData = {
         Name: document.getElementById('edit-Name').value.trim(),
