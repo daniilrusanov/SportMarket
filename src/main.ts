@@ -17,4 +17,4 @@ import './assets/scss/sections/catalog.scss';
 import './assets/scss/sections/footer.scss';
 
 import './assets/js/system-stability.js';
-import './assets/js/products-catalog.js';
+import './assets/js/server/products-catalog.js';
