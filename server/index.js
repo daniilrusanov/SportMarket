@@ -4,11 +4,11 @@ import bodyParser from 'body-parser';
 import * as path from "node:path";
 
 import productRoutes from './router/product.routes.js';
-const financialTransactionRoutes = require('./router/financialTransaction.routes');
-const logisticsRoutes = require('./router/logistic.routes');
-const ordersRoutes = require('./router/order.routes');
-const suppliersRoutes = require('./router/supplier.routes');
-const warehouseRoutes = require('./router/warehouse.routes');
+import financialTransactionRoutes from './router/financialTransaction.routes.js';
+import logisticsRoutes from './router/logistic.routes.js';
+import ordersRoutes from './router/order.routes.js';
+import suppliersRoutes from './router/supplier.routes.js';
+import warehouseRoutes from './router/warehouse.routes.js';
 
 
 const PORT = 5000;

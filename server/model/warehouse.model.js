@@ -8,7 +8,7 @@ class Warehouse {
         this.Workloaad = warehouse.Workloaad;
     }
 
-    static create = function (newWarehouses, result) {
+    static create = function (newWarehouse, result) {
         connection.query("INSERT INTO Warehouses set ?", newWarehouse, function (err, res) {
             if (err) {
                 console.log("error: ", err);

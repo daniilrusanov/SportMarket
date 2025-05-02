@@ -6,6 +6,6 @@ router.get('/', LogisticController.findAll);
 router.get('/:id', LogisticController.findById);
 router.post('/', LogisticController.create);
 router.put('/:id', LogisticController.update);
-router.delete('/:id', LogisticController.delete);
+router.delete('/:id', LogisticController.deleteLogistic);
 
 export default router;

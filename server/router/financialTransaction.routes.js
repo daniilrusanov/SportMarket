@@ -6,6 +6,6 @@ router.get('/', FinancialTransactionController.findAll);
 router.get('/:id', FinancialTransactionController.findById);
 router.post('/', FinancialTransactionController.create);
 router.put('/:id', FinancialTransactionController.update);
-router.delete('/:id', FinancialTransactionController.delete);
+router.delete('/:id', FinancialTransactionController.deleteFinancialTransaction);
 
 export default router;

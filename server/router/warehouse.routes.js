@@ -6,6 +6,6 @@ router.get('/', WarehouseController.findAll);
 router.get('/:id', WarehouseController.findById);
 router.post('/', WarehouseController.create);
 router.put(':id', WarehouseController.update);
-router.delete('/:id', WarehouseController.delete);
+router.delete('/:id', WarehouseController.deleteWarehouse);
 
 export default router;
