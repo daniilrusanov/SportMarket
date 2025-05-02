@@ -12,7 +12,7 @@ import './assets/scss/sections/supplier-status.scss';
 // @ts-ignore
 import './assets/scss/sections/system-stability.scss';
 // @ts-ignore
-import './assets/scss/sections/products-catalog.scss';
+import './assets/scss/sections/catalog.scss';
 // @ts-ignore
 import './assets/scss/sections/footer.scss';
 
