@@ -1,0 +1,63 @@
+section.catalog
+    h2.section-title Список складів
+
+    button#add-warehouse-button.btn-action Додати новий склад
+
+    .changes-table-container
+        table.changes-table
+            thead
+                tr
+                    th Код складу
+                    th Локація
+                    th Місткість
+                    th Завантаженість
+                    th Дії
+            tbody#warehouses-data
+
+    .form-container#add-warehouse-form-container(style="display: none;")
+        h2.section-title Додати склад
+        .changes-table-container
+            form#add-warehouse-form.warehouse-form
+                table.changes-table
+                    tbody
+                        tr
+                            td(colspan="2")
+                                label(for="add-Location-warehouse") Локація
+                                input#add-Location-warehouse.form-control(type="text" name="Location" placeholder="Локація")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Capacity-warehouse") Місткість
+                                input#add-Capacity-warehouse.form-control(type="number" name="Capacity" placeholder="Місткість")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Workload-warehouse") Завантаженість
+                                input#add-Workload-warehouse.form-control(type="number" name="Workload" placeholder="Завантаженість")
+                        tr
+                            td(colspan="2").actions
+                                button.btn-submit(type="submit") Додати
+                                button.btn-cancel(type="button" id="cancel-warehouse-add") Скасувати
+
+    // Форма редагування складу (прихована за замовчуванням)
+    .form-container#edit-warehouse-form-container(style="display: none;")
+        h2.section-title Редагувати склад
+        .changes-table-container
+            form#edit-warehouse-form.warehouse-form
+                input#edit-id-warehouse(type="hidden" name="id")
+                table.changes-table
+                    tbody
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Location-warehouse") Локація
+                                input#edit-Location-warehouse.form-control(type="text" name="Location" placeholder="Локація")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Capacity-warehouse") Місткість
+                                input#edit-Capacity-warehouse.form-control(type="number" name="Capacity" placeholder="Місткість")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Workload-warehouse") Завантаженість
+                                input#edit-Workload-warehouse.form-control(type="number" name="Workload" placeholder="Завантаженість")
+                        tr
+                            td(colspan="2").actions
+                                button.btn-submit(type="submit") Зберегти
+                                button.btn-cancel(type="button" id="cancel-warehouse-edit") Скасувати

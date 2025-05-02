@@ -4,18 +4,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Обробка кнопки додавання товару
     document.getElementById('add-product-button').addEventListener('click', () => {
-        document.getElementById('add-form-container').style.display = 'block';
+        document.getElementById('add-product-form-container').style.display = 'block';
     });
 
     // Обробка кнопки скасування додавання
-    document.getElementById('cancel-add').addEventListener('click', () => {
-        document.getElementById('add-form-container').style.display = 'none';
+    document.getElementById('cancel-product-add').addEventListener('click', () => {
+        document.getElementById('add-product-form-container').style.display = 'none';
         document.getElementById('add-product-form').reset();
     });
 
     // Обробка кнопки скасування редагування
-    document.getElementById('cancel-edit').addEventListener('click', () => {
-        document.getElementById('edit-form-container').style.display = 'none';
+    document.getElementById('cancel-product-edit').addEventListener('click', () => {
+        document.getElementById('edit-product-form-container').style.display = 'none';
     });
 
     // Обробка форми додавання товару
@@ -90,12 +90,12 @@ function renderProducts(products) {
 // Функція для додавання нового товару
 window.addProduct = async function() {
     const formData = {
-        Name: document.getElementById('add-Name').value.trim(),
-        Category: document.getElementById('add-Category').value,
-        Price: parseFloat(document.getElementById('add-Price').value),
-        Amount: parseInt(document.getElementById('add-Amount').value),
-        idSupplier: parseInt(document.getElementById('add-idSupplier').value),
-        idWarehouse: parseInt(document.getElementById('add-idWarehouse').value)
+        Name: document.getElementById('add-Name-product').value.trim(),
+        Category: document.getElementById('add-Category-product').value,
+        Price: parseFloat(document.getElementById('add-Price-product').value),
+        Amount: parseInt(document.getElementById('add-Amount-product').value),
+        idSupplier: parseInt(document.getElementById('add-idSupplier-product').value),
+        idWarehouse: parseInt(document.getElementById('add-idWarehouse-product').value)
     };
 
     // Валідація даних
@@ -119,7 +119,7 @@ window.addProduct = async function() {
         }
 
         document.getElementById('add-product-form').reset();
-        document.getElementById('add-form-container').style.display = 'none';
+        document.getElementById('add-product-form-container').style.display = 'none';
         fetchProducts(); // Оновлюємо таблицю
         alert('Товар успішно додано');
     } catch (error) {
@@ -172,16 +172,16 @@ window.editProductForm = async function (id) {
         }
 
         // Заповнюємо форму даними
-        document.getElementById('edit-id').value = productData.idProduct || id;
-        document.getElementById('edit-Name').value = productData.Name || '';
-        document.getElementById('edit-Category').value = productData.Category || 'Sneakers';
-        document.getElementById('edit-Price').value = productData.Price || '';
-        document.getElementById('edit-Amount').value = productData.Amount || '';
-        document.getElementById('edit-idSupplier').value = productData.idSupplier || '';
-        document.getElementById('edit-idWarehouse').value = productData.idWarehouse || '';
+        document.getElementById('edit-id-product').value = productData.idProduct || id;
+        document.getElementById('edit-Name-product').value = productData.Name || '';
+        document.getElementById('edit-Category-product').value = productData.Category || 'Sneakers';
+        document.getElementById('edit-Price-product').value = productData.Price || '';
+        document.getElementById('edit-Amount-product').value = productData.Amount || '';
+        document.getElementById('edit-idSupplier-product').value = productData.idSupplier || '';
+        document.getElementById('edit-idWarehouse-product').value = productData.idWarehouse || '';
 
         // Відображаємо форму
-        document.getElementById('edit-form-container').style.display = 'block';
+        document.getElementById('edit-product-form-container').style.display = 'block';
     } catch (error) {
         console.error('Помилка:', error);
         alert('Не вдалося завантажити дані товару: ' + error.message);
@@ -190,14 +190,14 @@ window.editProductForm = async function (id) {
 
 // Функція для оновлення товару
 window.updateProduct = async function () {
-    const id = document.getElementById('edit-id').value;
+    const id = document.getElementById('edit-id-product').value;
     const formData = {
-        Name: document.getElementById('edit-Name').value.trim(),
-        Category: document.getElementById('edit-Category').value,
-        Price: parseFloat(document.getElementById('edit-Price').value),
-        Amount: parseInt(document.getElementById('edit-Amount').value),
-        idSupplier: parseInt(document.getElementById('edit-idSupplier').value),
-        idWarehouse: parseInt(document.getElementById('edit-idWarehouse').value)
+        Name: document.getElementById('edit-Name-product').value.trim(),
+        Category: document.getElementById('edit-Category-product').value,
+        Price: parseFloat(document.getElementById('edit-Price-product').value),
+        Amount: parseInt(document.getElementById('edit-Amount-product').value),
+        idSupplier: parseInt(document.getElementById('edit-idSupplier-product').value),
+        idWarehouse: parseInt(document.getElementById('edit-idWarehouse-product').value)
     };
 
     // Валідація даних
@@ -232,7 +232,7 @@ window.updateProduct = async function () {
             throw new Error(`Помилка оновлення товару: ${response.status}`);
         }
 
-        document.getElementById('edit-form-container').style.display = 'none';
+        document.getElementById('edit-product-form-container').style.display = 'none';
         fetchProducts(); // Оновлюємо таблицю
         alert('Товар успішно оновлено');
     } catch (error) {

@@ -1,4 +1,4 @@
-section.products-catalog
+section.catalog
     h2.section-title Каталог товарів
 
     button#add-product-button.btn-action Додати новий елемент
@@ -17,7 +17,7 @@ section.products-catalog
                     th Дії
             tbody#products-data
 
-    .form-container#add-form-container(style="display: none;")
+    .form-container#add-product-form-container(style="display: none;")
         h2.section-title Додати товар
         .changes-table-container
             form#add-product-form.product-form
@@ -25,72 +25,73 @@ section.products-catalog
                     tbody
                         tr
                             td(colspan="2")
-                                label(for="add-Name") Назва товару
-                                input#add-Name.form-control(type="text" name="Name" placeholder="Назва")
+                                label(for="add-Name-product") Назва товару
+                                input#add-Name-product.form-control(type="text" name="Name" placeholder="Назва")
                         tr
                             td(colspan="2")
-                                label(for="add-Category") Категорія
-                                select#add-Category.form-control(name="Category")
+                                label(for="add-Category-product") Категорія
+                                select#add-Category-product.form-control(name="Category")
                                     option(value="Sneakers") Sneakers
                                     option(value="T-shirt") T-shirt
                                     option(value="Pants") Pants
                         tr
                             td(colspan="2")
-                                label(for="add-Price") Вартість
-                                input#add-Price.form-control(type="number" name="Price" placeholder="Вартість")
+                                label(for="add-Price-product") Вартість
+                                input#add-Price-product.form-control(type="number" name="Price" placeholder="Вартість")
                         tr
                             td(colspan="2")
-                                label(for="add-Amount") Кількість
-                                input#add-Amount.form-control(type="number" name="Amount" placeholder="Кількість")
+                                label(for="add-Amount-product") Кількість
+                                input#add-Amount-product.form-control(type="number" name="Amount" placeholder="Кількість")
                         tr
                             td(colspan="2")
-                                label(for="add-idSupplier") Код постачальника
-                                input#add-idSupplier.form-control(type="number" name="idSupplier" placeholder="Код постачальника")
+                                label(for="add-idSupplier-product") Код постачальника
+                                input#add-idSupplier-product.form-control(type="number" name="idSupplier" placeholder="Код постачальника")
                         tr
                             td(colspan="2")
-                                label(for="add-idWarehouse") Код складу
-                                input#add-idWarehouse.form-control(type="number" name="idWarehouse" placeholder="Код складу")
+                                label(for="add-idWarehouse-product") Код складу
+                                input#add-idWarehouse-product.form-control(type="number" name="idWarehouse" placeholder="Код складу")
                         tr
                             td(colspan="2").actions
                                 button.btn-submit(type="submit") Додати
-                                button.btn-cancel(type="button" id="cancel-add") Скасувати
+                                button.btn-cancel(type="button" id="cancel-product-add") Скасувати
 
     // Форма редагування продукту (прихована за замовчуванням)
-    .form-container#edit-form-container(style="display: none;")
+    .form-container#edit-product-form-container(style="display: none;")
         h2.section-title Редагувати товар
         .changes-table-container
             form#edit-product-form.product-form
-                input#edit-id(type="hidden" name="id")
+                input#edit-id-product(type="hidden" name="id")
                 table.changes-table
                     tbody
                         tr
                             td(colspan="2")
-                                label(for="edit-Name") Назва товару
-                                input#edit-Name.form-control(type="text" name="Name" placeholder="Назва")
+                                label(for="edit-Name-product") Назва товару
+                                input#edit-Name-product.form-control(type="text" name="Name" placeholder="Назва")
                         tr
                             td(colspan="2")
-                                label(for="edit-Category") Категорія
-                                select#edit-Category.form-control(name="Category")
+                                label(for="edit-Category-product") Категорія
+                                select#edit-Category-product.form-control(name="Category")
                                     option(value="Sneakers") Sneakers
                                     option(value="T-shirt") T-shirt
                                     option(value="Pants") Pants
                         tr
                             td(colspan="2")
-                                label(for="edit-Price") Вартість
-                                input#edit-Price.form-control(type="number" name="Price" placeholder="Вартість")
+                                label(for="edit-Price-product") Вартість
+                                input#edit-Price-product.form-control(type="number" name="Price" placeholder="Вартість")
                         tr
                             td(colspan="2")
-                                label(for="edit-Amount") Кількість
-                                input#edit-Amount.form-control(type="number" name="Amount" placeholder="Кількість")
+                                label(for="edit-Amount-product") Кількість
+                                input#edit-Amount-product.form-control(type="number" name="Amount" placeholder="Кількість")
                         tr
                             td(colspan="2")
-                                label(for="edit-idSupplier") Код постачальника
-                                input#edit-idSupplier.form-control(type="number" name="idSupplier" placeholder="Код постачальника")
+                                label(for="edit-idSupplier-product") Код постачальника
+                                input#edit-idSupplier-product.form-control(type="number" name="idSupplier" placeholder="Код постачальника")
                         tr
                             td(colspan="2")
-                                label(for="edit-idWarehouse") Код складу
-                                input#edit-idWarehouse.form-control(type="number" name="idWarehouse" placeholder="Код складу")
+                                label(for="edit-idWarehouse-product") Код складу
+                                input#edit-idWarehouse-product.form-control(type="number" name="idWarehouse" placeholder="Код складу")
                         tr
                             td(colspan="2").actions
                                 button.btn-submit(type="submit") Зберегти
-                                button.btn-cancel(type="button" id="cancel-edit") Скасувати
+                                button.btn-cancel(type="button" id="cancel-product-edit") Скасувати
+

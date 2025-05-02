@@ -1,0 +1,91 @@
+section.catalog
+    h2.section-title Список логістів
+
+    button#add-logistic-button.btn-action Додати нового логіста
+
+    .changes-table-container
+        table.changes-table
+            thead
+                tr
+                    th Код логіста
+                    th Ім'я
+                    th Роль
+                    th Контактні дані
+                    th Зарплата
+                    th Код складу
+                    th Дії
+            tbody#logistics-data
+
+    .form-container#add-logistic-form-container(style="display: none;")
+        h2.section-title Додати логіста
+        .changes-table-container
+            form#add-logistic-form.logistic-form
+                table.changes-table
+                    tbody
+                        tr
+                            td(colspan="2")
+                                label(for="add-Name-logistic") Ім'я
+                                input#add-Name-logistic.form-control(type="text" name="Name" placeholder="Ім'я")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Position-logistic") Роль
+                                select#add-Position-logistic.form-control(name="Position")
+                                    option(value="Менеджер") Менеджер
+                                    option(value="Водій") Водій
+                                    option(value="Вантажник") Вантажник
+                                    option(value="Експедитор") Експедитор
+                                    option(value="Інше") Інше
+                        tr
+                            td(colspan="2")
+                                label(for="add-Contacts-logistic") Контактні дані
+                                input#add-Contacts-logistic.form-control(type="text" name="Contacts" placeholder="Контактні дані")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Salary-logistic") Зарплата
+                                input#add-Salary-logistic.form-control(type="number" name="Salary" placeholder="Зарплата")
+                        tr
+                            td(colspan="2")
+                                label(for="add-idWarehouse-logistic") Код складу
+                                input#add-idWarehouse-logistic.form-control(type="number" name="idWarehouse" placeholder="Код складу")
+                        tr
+                            td(colspan="2").actions
+                                button.btn-submit(type="submit") Додати
+                                button.btn-cancel(type="button" id="cancel-logistic-add") Скасувати
+
+    // Форма редагування логіста (прихована за замовчуванням)
+    .form-container#edit-logistic-form-container(style="display: none;")
+        h2.section-title Редагувати логіста
+        .changes-table-container
+            form#edit-logistic-form.logistic-form
+                input#edit-id-logistic(type="hidden" name="id")
+                table.changes-table
+                    tbody
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Name-logistic") Ім'я
+                                input#edit-Name-logistic.form-control(type="text" name="Name" placeholder="Ім'я")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Position-logistic") Роль
+                                select#edit-Position-logistic.form-control(name="Position")
+                                    option(value="Менеджер") Менеджер
+                                    option(value="Водій") Водій
+                                    option(value="Вантажник") Вантажник
+                                    option(value="Експедитор") Експедитор
+                                    option(value="Інше") Інше
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Contacts-logistic") Контактні дані
+                                input#edit-Contacts-logistic.form-control(type="text" name="Contacts" placeholder="Контактні дані")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Salary-logistic") Зарплата
+                                input#edit-Salary-logistic.form-control(type="number" name="Salary" placeholder="Зарплата")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-idWarehouse-logistic") Код складу
+                                input#edit-idWarehouse-logistic.form-control(type="number" name="idWarehouse" placeholder="Код складу")
+                        tr
+                            td(colspan="2").actions
+                                button.btn-submit(type="submit") Зберегти
+                                button.btn-cancel(type="button" id="cancel-logistic-edit") Скасувати

@@ -5,7 +5,7 @@ class Warehouse {
         this.idWarehouse = warehouse.idWarehouse;
         this.Location = warehouse.Location;
         this.Capacity = warehouse.Capacity;
-        this.Workloaad = warehouse.Workloaad;
+        this.Workload = warehouse.Workload;
     }
 
     static create = function (newWarehouse, result) {
@@ -44,8 +44,8 @@ class Warehouse {
     }
 
     static update = function (id, newWarehouse, result) {
-        connection.query("UPDATE Warehouses SET Location=?, Capacity=?, Workloaad=? WHERE idWarehouse = ?",
-            [newWarehouse.Location, newWarehouse.Capacity, newWarehouse.Workloaad, id],
+        connection.query("UPDATE Warehouses SET Location=?, Capacity=?, Workload=? WHERE idWarehouse = ?",
+            [newWarehouse.Location, newWarehouse.Capacity, newWarehouse.Workload, id],
             function (err, res) {
                 if (err) {
                     console.log("error: ", err);

@@ -1,0 +1,89 @@
+section.catalog
+    h2.section-title Список фінансових транзакцій
+
+    button#add-transaction-button.btn-action Додати нову транзакцію
+
+    .changes-table-container
+        table.changes-table
+            thead
+                tr
+                    th Код фінансової операції
+                    th Код замовлення
+                    th Кількість
+                    th Дата
+                    th Статус
+                    th Код складу
+                    th Дії
+            tbody#transactions-data
+
+    .form-container#add-transaction-form-container(style="display: none;")
+        h2.section-title Додати фінансову транзакцію
+        .changes-table-container
+            form#add-transaction-form.transaction-form
+                table.changes-table
+                    tbody
+                        tr
+                            td(colspan="2")
+                                label(for="add-idOrder-transaction") Код замовлення
+                                input#add-idOrder-transaction.form-control(type="number" name="idOrder" placeholder="Код замовлення")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Amount-transaction") Кількість
+                                input#add-Amount-transaction.form-control(type="number" name="Amount" placeholder="Кількість")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Date-transaction") Дата
+                                input#add-Date-transaction.form-control(type="date" name="Date" placeholder="Дата")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Status-transaction") Статус
+                                select#add-Status-transaction.form-control(name="Status")
+                                    option(value="0") Неоплачено
+                                    option(value="1") Оплачено
+                                    option(value="2") В обробці
+                                    option(value="3") Завершено
+                        tr
+                            td(colspan="2")
+                                label(for="add-idWarehouse-transaction") Код складу
+                                input#add-idWarehouse-transaction.form-control(type="number" name="idWarehouse" placeholder="Код складу")
+                        tr
+                            td(colspan="2").actions
+                                button.btn-submit(type="submit") Додати
+                                button.btn-cancel(type="button" id="cancel-transaction-add") Скасувати
+
+    // Форма редагування транзакції (прихована за замовчуванням)
+    .form-container#edit-transaction-form-container(style="display: none;")
+        h2.section-title Редагувати фінансову транзакцію
+        .changes-table-container
+            form#edit-transaction-form.transaction-form
+                input#edit-transaction-id(type="hidden" name="id")
+                table.changes-table
+                    tbody
+                        tr
+                            td(colspan="2")
+                                label(for="edit-idOrder-transaction") Код замовлення
+                                input#edit-idOrder-transaction.form-control(type="number" name="idOrder" placeholder="Код замовлення")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Amount-transaction") Кількість
+                                input#edit-Amount-transaction.form-control(type="number" name="Amount" placeholder="Кількість")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Date-transaction") Дата
+                                input#edit-Date-transaction.form-control(type="date" name="Date" placeholder="Дата")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Status-transaction") Статус
+                                select#edit-Status-transaction.form-control(name="Status")
+                                    option(value="0") Неоплачено
+                                    option(value="1") Оплачено
+                                    option(value="2") В обробці
+                                    option(value="3") Завершено
+                        tr
+                            td(colspan="2")
+                                label(for="edit-idWarehouse-transaction") Код складу
+                                input#edit-idWarehouse-transaction.form-control(type="number" name="idWarehouse" placeholder="Код складу")
+                        tr
+                            td(colspan="2").actions
+                                button.btn-submit(type="submit") Зберегти
+                                button.btn-cancel(type="button" id="cancel-transaction-edit") Скасувати

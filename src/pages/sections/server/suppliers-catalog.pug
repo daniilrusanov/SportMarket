@@ -1,0 +1,76 @@
+section.catalog
+    h2.section-title Список постачальників
+
+    button#add-supplier-button.btn-action Додати нового постачальника
+
+    .changes-table-container
+        table.changes-table
+            thead
+                tr
+                    th Код постачальника
+                    th Ім'я
+                    th Контактні дані
+                    th Умови
+                    th Статус
+                    th Дії
+            tbody#suppliers-data
+
+    .form-container#add-supplier-form-container(style="display: none;")
+        h2.section-title Додати постачальника
+        .changes-table-container
+            form#add-supplier-form.supplier-form
+                table.changes-table
+                    tbody
+                        tr
+                            td(colspan="2")
+                                label(for="add-Name-supplier") Ім'я
+                                input#add-Name-supplier.form-control(type="text" name="Name" placeholder="Ім'я")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Contacts-supplier") Контактні дані
+                                input#add-Contacts-supplier.form-control(type="text" name="Contacts" placeholder="Контактні дані")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Terms-supplier") Умови
+                                input#add-Terms-supplier.form-control(type="text" name="Terms" placeholder="Умови")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Status-supplier") Статус
+                                select#add-Status-supplier.form-control(name="Status")
+                                    option(value="1") Активний
+                                    option(value="0") Неактивний
+                        tr
+                            td(colspan="2").actions
+                                button.btn-submit(type="submit") Додати
+                                button.btn-cancel(type="button" id="cancel-supplier-add") Скасувати
+
+    // Форма редагування постачальника (прихована за замовчуванням)
+    .form-container#edit-supplier-form-container(style="display: none;")
+        h2.section-title Редагувати постачальника
+        .changes-table-container
+            form#edit-supplier-form.supplier-form
+                input#edit-id-supplier(type="hidden" name="id")
+                table.changes-table
+                    tbody
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Name-supplier") Ім'я
+                                input#edit-Name-supplier.form-control(type="text" name="Name" placeholder="Ім'я")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Contacts-supplier") Контактні дані
+                                input#edit-Contacts-supplier.form-control(type="text" name="Contacts" placeholder="Контактні дані")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Terms-supplier") Умови
+                                input#edit-Terms-supplier.form-control(type="text" name="Terms" placeholder="Умови")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Status-supplier") Статус
+                                select#edit-Status-supplier.form-control(name="Status")
+                                    option(value="1") Активний
+                                    option(value="0") Неактивний
+                        tr
+                            td(colspan="2").actions
+                                button.btn-submit(type="submit") Зберегти
+                                button.btn-cancel(type="button" id="cancel-supplier-edit") Скасувати

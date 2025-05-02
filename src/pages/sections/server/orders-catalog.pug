@@ -1,0 +1,80 @@
+section.catalog
+    h2.section-title Список замовлень
+
+    button#add-order-button.btn-action Додати нове замовлення
+
+    .changes-table-container
+        table.changes-table
+            thead
+                tr
+                    th Код замовлення
+                    th Код постачальника
+                    th Код продукту
+                    th Кількість
+                    th Статус
+                    th Дії
+            tbody#orders-data
+
+    .form-container#add-order-form-container(style="display: none;")
+        h2.section-title Додати замовлення
+        .changes-table-container
+            form#add-order-form.order-form
+                table.changes-table
+                    tbody
+                        tr
+                            td(colspan="2")
+                                label(for="add-idSupplier-order") Код постачальника
+                                input#add-idSupplier-order.form-control(type="number" name="idSupplier" placeholder="Код постачальника")
+                        tr
+                            td(colspan="2")
+                                label(for="add-idProduct-order") Код продукту
+                                input#add-idProduct-order.form-control(type="number" name="idProduct" placeholder="Код продукту")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Amount-order") Кількість
+                                input#add-Amount-order.form-control(type="number" name="Amount" placeholder="Кількість")
+                        tr
+                            td(colspan="2")
+                                label(for="add-Status-order") Статус
+                                select#add-Status-order.form-control(name="Status")
+                                    option(value="1") В обробці
+                                    option(value="2") Відправлено
+                                    option(value="3") Доставлено
+                                    option(value="4") Скасовано
+                        tr
+                            td(colspan="2").actions
+                                button.btn-submit(type="submit") Додати
+                                button.btn-cancel(type="button" id="cancel-order-add") Скасувати
+
+    // Форма редагування замовлення (прихована за замовчуванням)
+    .form-container#edit-order-form-container(style="display: none;")
+        h2.section-title Редагувати замовлення
+        .changes-table-container
+            form#edit-order-form.order-form
+                input#edit-id-order(type="hidden" name="id")
+                table.changes-table
+                    tbody
+                        tr
+                            td(colspan="2")
+                                label(for="edit-idSupplier-order") Код постачальника
+                                input#edit-idSupplier-order.form-control(type="number" name="idSupplier" placeholder="Код постачальника")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-idProduct-order") Код продукту
+                                input#edit-idProduct-order.form-control(type="number" name="idProduct" placeholder="Код продукту")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Amount-order") Кількість
+                                input#edit-Amount-order.form-control(type="number" name="Amount" placeholder="Кількість")
+                        tr
+                            td(colspan="2")
+                                label(for="edit-Status-order") Статус
+                                select#edit-Status-order.form-control(name="Status")
+                                    option(value="1") В обробці
+                                    option(value="2") Відправлено
+                                    option(value="3") Доставлено
+                                    option(value="4") Скасовано
+                        tr
+                            td(colspan="2").actions
+                                button.btn-submit(type="submit") Зберегти
+                                button.btn-cancel(type="button" id="cancel-order-edit") Скасувати
