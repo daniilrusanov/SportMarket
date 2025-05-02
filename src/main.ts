@@ -18,3 +18,8 @@ import './assets/scss/sections/footer.scss';
 
 import './assets/js/system-stability.js';
 import './assets/js/server/products-catalog.js';
+import './assets/js/server/financial-transactions-catalog.js';
+import './assets/js/server/logistics-catalog.js';
+import './assets/js/server/orders-catalog.js';
+import './assets/js/server/suppliers-catalog.js';
+import './assets/js/server/warehouses-catalog.js';
