@@ -1,4 +1,4 @@
-import Order from '../model/order.model';
+import Order from '../model/order.model.js';
 
 const findAll = function (req, res) {
     Order.findAll(function (err, order) {

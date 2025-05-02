@@ -1,4 +1,4 @@
-import Supplier from '../model/supplier.model';
+import Supplier from '../model/supplier.model.js';
 
 const findAll = function (req, res) {
     Supplier.findAll(function (err, supplier) {

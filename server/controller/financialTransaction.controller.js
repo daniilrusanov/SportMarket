@@ -1,4 +1,4 @@
-import FinancialTransaction from '../model/financialTransaction.model';
+import FinancialTransaction from '../model/financialTransaction.model.js';
 
 const findAll = function (req, res) {
     FinancialTransaction.findAll(function (err, financialTransaction) {

@@ -1,4 +1,4 @@
-import Warehouse from '../model/warehouse.model';
+import Warehouse from '../model/warehouse.model.js';
 
 const findAll = function (req, res) {
     Warehouse.findAll(function (err, warehouse) {

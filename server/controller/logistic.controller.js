@@ -1,4 +1,4 @@
-import Logistic from '../model/logistic.model';
+import Logistic from '../model/logistic.model.js';
 
 const findAll = function (req, res) {
     Logistic.findAll(function (err, logistic) {
